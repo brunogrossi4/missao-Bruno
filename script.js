@@ -43,3 +43,46 @@ texto: "Defendendo politicas públicas que subsidion energia solar para familias
 escolas texto: "Promovendo a instalação de painéis solares em centros comunitários de comunidades marginalizadas.", afirmacao: "afirmacao6
 
 12
+let atual 0:
+
+let perguntaAtual; let historiaFinal
+
+function mostrafergunta() {
+
+if (atual perguntas.length) (
+
+mostraResultado();
+
+return;
+
+caixa Perguntas.textContent caixaAlternativas.textContent perguntaatual.enunciado;
+
+perguntaAtual perguntas [atual];
+
+textoResultado.textContent mostraälternativas();
+
+function mostraAlternativas (){
+
+for (const alternativa of perguntañtual.alternativas) { const botacAlternativa document.createElement("button");
+
+botaoAlternativa.textContent alternativa.texto,
+
+botacAlternativa.addEventListener("click", ()=>
+
+respostaselecionada (alternativa)); caixaAlternativas.appendChild(botaoAlternativa);
+
+1
+
+function respostaselecionada (opcaoSelecionada) {
+
+const afirmacao opcaoSelecionada.afirmacao, historiaFinal + afirmacao ";
+
+atual++
+
+mostraPergunta();
+
+function mostraResultado () {
+
+caixaFerguntas.textContent "Resumindo..."; textoResultado.textContent historiafinal; caixaAlternativas.text.Content = "";
+
+mostraPergunta();
