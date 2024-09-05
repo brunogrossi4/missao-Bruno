@@ -4,21 +4,21 @@ const botaoMaravilhoso = document.getElementById("maravilhoso");
 const historiaFinal = document.getElementById("historia-final");
 const resultado = document.querySelector(".resultado");
 
-// Definindo as fases da missão
+// Definindo as fases da missão com o novo tema
 const missoes = [
-    "Você escolheu um caminho assustador. A inteligência artificial começa a substituir empregos rapidamente.",
-    "A tecnologia agora governa a economia, criando novas desigualdades sociais. Você se sente desconfortável com isso?",
-    "A IA evolui a ponto de controlar decisões governamentais e o futuro da humanidade está em suas mãos."
+    "A inteligência artificial está revolucionando a construção civil. Máquinas agora fazem tarefas que antes eram realizadas por pedreiros e engenheiros. Como você se sente sobre isso?",
+    "As obras estão sendo realizadas de forma mais rápida e precisa, mas muitos trabalhadores estão sendo substituídos por robôs e algoritmos de planejamento. O que você acha disso?",
+    "As decisões sobre materiais, prazos e segurança estão sendo feitas por IA. Isso está alterando o mercado de trabalho na construção. Como você vê esse futuro?"
 ];
 
 const historias = {
     assustador: [
-        "Você optou por temer a inteligência artificial. Com o tempo, o medo aumentou e as pessoas começaram a resistir à tecnologia.",
-        "A revolução tecnológica parou e a sociedade começou a viver de forma mais conservadora, sem grandes avanços."
+        "Você optou por temer o impacto da IA na construção civil. Com o tempo, pedreiros e engenheiros passaram a ser cada vez menos necessários, e o desemprego aumentou.",
+        "A falta de trabalhadores humanos no setor afetou a qualidade das construções, resultando em obras menos seguras e uma perda de confiança na tecnologia."
     ],
     maravilhoso: [
-        "Você abraçou o futuro da inteligência artificial. A sociedade se adaptou e prosperou com a tecnologia.",
-        "A automação tornou a vida mais fácil e as pessoas focaram em trabalhos mais criativos e humanitários."
+        "Você abraçou as mudanças trazidas pela IA na construção civil. Com o uso de novas tecnologias, as construções se tornaram mais eficientes, sustentáveis e seguras.",
+        "Pedreiros e engenheiros começaram a se especializar em novas áreas, trabalhando em conjunto com as máquinas para criar projetos mais ambiciosos e inovadores."
     ]
 };
 
