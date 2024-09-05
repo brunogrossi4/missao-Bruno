@@ -1,88 +1,53 @@
-const caixaPrincipal document.querySelector(".caixa-principal");
+// Selecionando os elementos no DOM
+const caixaPrincipal = document.querySelector(".caixa-principal");
+const caixaPergunta = document.querySelector(".caixa-perguntas");
+const caixaAlternativas = document.querySelector(".caixa-alternativas");
+const caixaResultado = document.querySelector(".caixa-resultado");
+const textoResultado = document.querySelector(".texto-resultado");
 
-const caixa Pergunta document.querySelector(".caixa-porguntas"); const caixaAlternativas document.querySelector(".caixa-alternativas");
+// Objeto de perguntas
+const perguntas = [
+  {
+    enunciado: "Como você acredita que podemos combater o racismo na sociedade?",
+    alternativas: [
+      { texto: "Participando de campanhas de conscientização e educação sobre igualdade racial.", afirmacao: "afirmacao1" },
+      { texto: "Denunciando atos de discriminação e apoiando políticas públicas inclusivas.", afirmacao: "afirmacao2" }
+    ]
+  },
+  {
+    enunciado: "Como você pode ajudar a combater a disseminação de fake news, especialmente as que perpetuam o racismo?",
+    alternativas: [
+      { texto: "Verificando a veracidade das informações antes de compartilhar qualquer conteúdo, especialmente sobre temas sensíveis como racismo.", afirmacao: "afirmacao3" },
+      { texto: "Educando amigos e familiares sobre os perigos das fake news e incentivando-os a não compartilhar conteúdos falsos que perpetuam o racismo.", afirmacao: "afirmacao4" }
+    ]
+  },
+  {
+    enunciado: "Como podemos incentivar o uso de energia solar e outras formas de energia limpa, especialmente em comunidades carentes?",
+    alternativas: [
+      { texto: "Defendendo políticas públicas que subsidiem energia solar para famílias de baixa renda.", afirmacao: "afirmacao5" },
+      { texto: "Promovendo a instalação de painéis solares em escolas e centros comunitários de comunidades marginalizadas.", afirmacao: "afirmacao6" }
+    ]
+  }
+];
 
-const caixaResultado const textoResultado document.querySelector(".caixa-resultado"); document.querySelector("testo-resultado");
+// Exemplo de exibição de uma pergunta
+function exibirPergunta(index) {
+  const pergunta = perguntas[index];
+  caixaPergunta.textContent = pergunta.enunciado;
+  caixaAlternativas.innerHTML = ''; // Limpar alternativas anteriores
 
-const perguntas T
+  pergunta.alternativas.forEach(alternativa => {
+    const botao = document.createElement("button");
+    botao.textContent = alternativa.texto;
+    botao.onclick = () => verificarResposta(alternativa.afirmacao);
+    caixaAlternativas.appendChild(botao);
+  });
+}
 
-enunciado: "Como você acredita que podemos combater sociedade?", Tacismo
+function verificarResposta(afirmacao) {
+  // Lógica para verificar a resposta e exibir o resultado
+  textoResultado.textContent = `Você escolheu: ${afirmacao}`;
+}
 
-alternativas: [
-
-texto: "Participando de campanhas de conscientização educação sobre igualdade racial." afirmacao: "afirmacaol"
-
-afirmacao: "afirmacao2"
-
-1
-
-1
-
-texto: "Denunciando atos de discriminação apoiando politicas públicas inclusivas.",
-
-enunciado: "Como você pode ajudar combater a disseminação de fake news, especialmente as que perpetuan o racismo?",
-
-alternativas: [
-
-texto: "Verificando a veracidade das informações antes de compartilhar qualquer conteúdo, especialmente sobre temas aensiveis como racismo.".
-
-afirmacao: "afirmacao3"
-
-texto: "Educando amigos e familiares sobre os perigos das incentivando-os racismo.", não compartilhar conteúdos falsos que afirmacao: "afirmacao4" perpetuan
-
-fake news
-
-1
-
-enunciados "Como podemos incentivar o uso de energia solar e outras formas de energia limpa, especialmente en comunidades carentes?", alternativas:
-
-(
-
-texto: "Defendendo politicas públicas que subsidion energia solar para familias de baixa renda.", afirmacao: "afirmacao5"
-
-escolas texto: "Promovendo a instalação de painéis solares em centros comunitários de comunidades marginalizadas.", afirmacao: "afirmacao6
-
-12
-let atual 0:
-
-let perguntaAtual; let historiaFinal
-
-function mostrafergunta() {
-
-if (atual perguntas.length) (
-
-mostraResultado();
-
-return;
-
-caixa Perguntas.textContent caixaAlternativas.textContent perguntaatual.enunciado;
-
-perguntaAtual perguntas [atual];
-
-textoResultado.textContent mostraälternativas();
-
-function mostraAlternativas (){
-
-for (const alternativa of perguntañtual.alternativas) { const botacAlternativa document.createElement("button");
-
-botaoAlternativa.textContent alternativa.texto,
-
-botacAlternativa.addEventListener("click", ()=>
-
-respostaselecionada (alternativa)); caixaAlternativas.appendChild(botaoAlternativa);
-
-1
-
-function respostaselecionada (opcaoSelecionada) {
-
-const afirmacao opcaoSelecionada.afirmacao, historiaFinal + afirmacao ";
-
-atual++
-
-mostraPergunta();
-
-function mostraResultado () {
-
-caixaFerguntas.textContent "Resumindo..."; textoResultado.textContent historiafinal; caixaAlternativas.text.Content = "";
-
-mostraPergunta();
+// Exemplo de como usar a função
+exibirPergunta(0); // Exibe a primeira pergunta
