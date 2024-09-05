@@ -14,12 +14,12 @@ body {
     height: 100vh;
 }
 
-.caixa-principal {
+.container {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 400px;
     text-align: center;
 }
 
@@ -29,37 +29,39 @@ h1 {
     color: #333;
 }
 
-h2 {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: #555;
-}
-
-.caixa-alternativas {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.caixa-alternativas button {
-    padding: 10px;
-    border: none;
-    background-color: #007BFF;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-.caixa-alternativas button:hover {
-    background-color: #0056b3;
-}
-
-.caixa-resultado {
-    margin-top: 20px;
-}
-
-#resultado {
+p {
     font-size: 16px;
-    color: #28a745;
+    margin-bottom: 20px;
+}
+
+.botoes {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+#assustador {
+    background-color: #ff4c4c;
+    color: white;
+}
+
+#maravilhoso {
+    background-color: #4caf50;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.resultado {
+    margin-top: 20px;
+    display: none;
 }
