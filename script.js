@@ -30,24 +30,46 @@ const perguntas = [
   }
 ];
 
-// Exemplo de exibição de uma pergunta
-function exibirPergunta(index) {
-  const pergunta = perguntas[index];
-  caixaPergunta.textContent = pergunta.enunciado;
-  caixaAlternativas.innerHTML = ''; // Limpar alternativas anteriores
+let atual 0:
 
-  pergunta.alternativas.forEach(alternativa => {
-    const botao = document.createElement("button");
-    botao.textContent = alternativa.texto;
-    botao.onclick = () => verificarResposta(alternativa.afirmacao);
-    caixaAlternativas.appendChild(botao);
-  });
-}
+let perguntaAtual; let historiaFinal
 
-function verificarResposta(afirmacao) {
-  // Atualiza o texto de resultado na caixa de resultado
-  textoResultado.textContent = afirmacao;
-}
+function mostrafergunta() {
 
-// Exibir a primeira pergunta ao carregar a página
-exibirPergunta(0); // Exibe a primeira pergunta
+if (atual perguntas.length) (
+
+mostraResultado();
+
+return;
+
+caixa Perguntas.textContent caixaAlternativas.textContent perguntaatual.enunciado;
+
+perguntaAtual perguntas [atual];
+
+textoResultado.textContent mostraälternativas();
+
+function mostraAlternativas (){
+
+for (const alternativa of perguntañtual.alternativas) { const botacAlternativa document.createElement("button");
+
+botaoAlternativa.textContent alternativa.texto,
+
+botacAlternativa.addEventListener("click", ()=>
+
+respostaselecionada (alternativa)); caixaAlternativas.appendChild(botaoAlternativa);
+
+1
+
+function respostaselecionada (opcaoSelecionada) {
+
+const afirmacao opcaoSelecionada.afirmacao, historiaFinal + afirmacao ";
+
+atual++
+
+mostraPergunta();
+
+function mostraResultado () {
+
+caixaFerguntas.textContent "Resumindo..."; textoResultado.textContent historiafinal; caixaAlternativas.text.Content = "";
+
+mostraPergunta();
